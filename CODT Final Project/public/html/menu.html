@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/menu.css">
     <link rel="icon" href="../images/Coffee Time.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+    <link rel="stylesheet" href="../css/jquery.rateyo.css">
     <link href="https://fonts.googleapis.com/css?family=Merriweather|Playfair+Display|Ubuntu|Courgette" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -24,9 +26,46 @@
         <![endif]-->
     <div w3-include-html=navbar1.html></div>
 
-    <div>
-        
-    </div>
+    <nav>
+        <div>
+
+        </div>
+    </nav>
+    <main>
+        <div class="container-fluid">
+            <h2 id="menuID">Drinks</h2>
+            <div class="row">
+                <div class="col-sm-2">
+
+                    <div class="card">
+                        <img class="card-img-top img-fluid" src="http://placehold.it/286x180" alt="Card image cap">
+                        <div class="card-block">
+                            <h4 class="card-title">Name</h4>
+                            <p class="card-text">Description: </p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Price: </li>
+                            <li class="list-group-item">
+                                <div class="rating">
+                                    <span>☆</span>
+                                    <span>☆</span>
+                                    <span>☆</span>
+                                    <span>☆</span>
+                                    <span>☆</span>
+                                </div>
+                                <!-- <div id="rateYo">Rating:</div> -->
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        </div>
+    </main>
 
     <div w3-include-html=footer.html></div>
 
@@ -36,8 +75,20 @@
     <script src="../js/bootstrap-native-v4.js"></script>
     <!--a simple library so that html tags can be separated into other files - neater and cleaner -->
     <script src="../js/w3.js"></script>
+    <script src="../js/jquery-3.2.1.js"></script>
+    <script src="../js/jquery.rateyo.js"></script>
     <!--where pur javascript resides -->
     <script>w3.includeHTML();</script>
+    <!-- <script>
+        $(function () {
+            $("#rateYo").rateYo({
+                rating: 4,
+                fullStar:true,
+                readonly:true
+            });
+
+        });
+    </script> -->
 </body>
 
 </html>
