@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 
 var app = express();
 var host = "127.0.0.1";
+// var host = "192.168.42.176";
 var port = 8080;
 var home_file = "/index.html";
 

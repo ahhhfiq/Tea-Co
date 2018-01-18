@@ -14,58 +14,127 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/menu.css">
     <link rel="icon" href="../images/Coffee Time.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
-    <link rel="stylesheet" href="../css/jquery.rateyo.css">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather|Playfair+Display|Ubuntu|Courgette" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Playfair+Display|Ubuntu|Courgette|Signika|Lato" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body>
+<body onload="getMenuData()">
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <div w3-include-html=navbar1.html></div>
-
-    <nav>
-        <div>
-
-        </div>
-    </nav>
+        
     <main>
         <div class="container-fluid">
-            <h2 id="menuID">Drinks</h2>
             <div class="row">
-                <div class="col-sm-2">
+                <div class="col-sm-3">
+                    <div class="input-group searchBar">
+                        <input type="text" class="form-control" placeholder="Search for...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-outline-dark" id="rad" type="button"><img src="../images/search.svg" height="30px" width="30px"></button>
+                        </span>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <h1 onclick="foodSelect()" id="food" class="menuTitle">Food</h1>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <h1 onclick="drinkSelect()" id="drinks" class="menuTitle activate">Drinks </h1>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <h1 onclick="bnbSelect()" id="bnb" class="menuTitle">Bag
+                                <span style="font-family:'Playfair Display', serif;">&</span> Beans</h1>
+                        </a>
+                    </div>
+                </div>
 
-                    <div class="card">
-                        <img class="card-img-top img-fluid" src="http://placehold.it/286x180" alt="Card image cap">
-                        <div class="card-block">
-                            <h4 class="card-title">Name</h4>
-                            <p class="card-text">Description: </p>
+                <div class="col-sm-9">
+                    <div class="responsive">
+                        <div class="gallery">
+                            <a href="#" onclick="showItems()">
+                                <img src="../images/teait.jpg" alt="Tea Cup" width="300" height="200">
+                            </a>
+                            <!-- <div class="title">Title: Big Tea</div>                             -->
+                            <div class="desc">Add a description of the image here</div>
                         </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Price: </li>
-                            <li class="list-group-item">
-                                <div class="rating">
-                                    <span>☆</span>
-                                    <span>☆</span>
-                                    <span>☆</span>
-                                    <span>☆</span>
-                                    <span>☆</span>
-                                </div>
-                                <!-- <div id="rateYo">Rating:</div> -->
-                            </li>
+                    </div>
+                    <div class="responsive">
+                        <div class="gallery">
+                            <a href="#" onclick="showItems()">
+                                <img src="../images/brewcoffee.jpg" alt="Brewed Coffee" width="600" height="400">
+                            </a>
+                            <div class="desc">Add a description of the image here</div>
+                        </div>
+                    </div>
 
-                        </ul>
+                    <div class="responsive">
+                        <div class="gallery">
+                            <a href="#" onclick="showItems()">
+                                <img src="../images/coldtea.jpg" alt="Northern Lights" width="600" height="400">
+                            </a>
+                            <div class="desc">Add a description of the image here</div>
+                        </div>
+                    </div>
+
+                    <div class="responsive">
+                        <div class="gallery">
+                            <a href="#" onclick="showItems()">
+                                <img src="../images/cap-coffee.jpeg" alt="Mountains" width="600" height="400">
+                            </a>
+                            <div class="desc">Add a description of the image here</div>
+                        </div>
+                    </div>
+                    <!-- first row -->
+
+                    <div class="responsive">
+                        <div class="gallery">
+                            <a href="#" onclick="showItems()">
+                                <img src="../images/teait.jpg" alt="Trolltunga Norway" width="300" height="200">
+                            </a>
+                            <div class="desc">Add a description of the image here</div>
+                        </div>
+                    </div>
+
+
+                    <div class="responsive">
+                        <div class="gallery">
+                            <a href="#" onclick="showItems()">
+                                <img src="../images/brewcoffee.jpg" alt="Forest" width="600" height="400">
+                            </a>
+                            <div class="desc">Add a description of the image here</div>
+                        </div>
+                    </div>
+
+                    <div class="responsive">
+                        <div class="gallery">
+                            <a href="#" onclick="showItems()">
+                                <img src="../images/coldtea.jpg" alt="Northern Lights" width="600" height="400">
+                            </a>
+                            <div class="desc">Add a description of the image here</div>
+                        </div>
+                    </div>
+
+                    <div class="responsive">
+                        <div class="gallery">
+                            <a href="#" onclick="showItems()">
+                                <img src="../images/cap-coffee.jpeg" alt="Mountains" width="600" height="400">
+                            </a>
+                            <div class="desc">Add a description of the image here</div>
+                        </div>
                     </div>
 
                 </div>
-
             </div>
 
         </div>
-        </div>
+
     </main>
+    <!-- <div w3-include-html=../html/login.html></div> -->
+    <div w3-include-html=../html/menu-modal.html></div>
 
     <div w3-include-html=footer.html></div>
 
@@ -79,16 +148,10 @@
     <script src="../js/jquery.rateyo.js"></script>
     <!--where pur javascript resides -->
     <script>w3.includeHTML();</script>
-    <!-- <script>
-        $(function () {
-            $("#rateYo").rateYo({
-                rating: 4,
-                fullStar:true,
-                readonly:true
-            });
 
-        });
-    </script> -->
+    <script src="../js/menu.js"></script>
+    <script src="../js/app.js"></script>
+
 </body>
 
 </html>

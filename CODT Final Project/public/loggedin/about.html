@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>What About Us?</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/about.css">
+    <link rel="icon" href="../images/Coffee Time.ico">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Playfair+Display|Ubuntu|Courgette|Signika|Lato" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <div w3-include-html=navbar1.html></div>
+
+    <!-- End Of Header/nav bar -->
+    <!-- End of base -->
+    <main>
+        <div>
+            <h1 class="title" style="font-size: 60px;">About Us</h1>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p class="story">Dolor laborum in labore labore cillum proident. Sunt cillum eiusmod duis anim est ullamco pariatur. Ullamco
+                        mollit enim ad eu anim.</p>
+                    <p class="story">Sunt exercitation sint nostrud est cupidatat. Pariatur consectetur labore esse esse. Tempor amet id ut
+                        ut fugiat aliquip commodo. Est consectetur Lorem occaecat aliqua reprehenderit anim laborum labore
+                        minim minim. Excepteur qui non magna duis velit et sit. Irure sunt do aliquip dolor ex anim excepteur
+                        dolore enim. Eiusmod nulla aliqua ipsum do laborum dolore nisi adipisicing eu ea labore.</p>
+                </div>
+                <div class="col">
+                    <h3 class="title">Locate Us</h3>
+                    <div id="map"></div>
+                </div>
+            </div>  
+        </div>
+    </main>
+    <!-- <div w3-include-html=../html/login.html></div> -->
+
+    <div w3-include-html=footer.html></div>
+
+    <!--a dependcy library required by bootstrap js -->
+    <script src="../js/popper.js"></script>
+    <!--using bootstrap js for effects like modals -->
+    <script src="../js/bootstrap-native-v4.js"></script>
+    <!--a simple library so that html tags can be separated into other files - neater and cleaner -->
+    <script src="../js/w3.js"></script>
+    <!--where pur javascript resides -->
+    <script src="../js/app.js"></script>
+
+    <script> 
+        //1.300888, 103.859043 
+        var map;
+        var shop = { lat: 1.300888, lng: 103.859043 };
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: shop,
+                zoom: 18,
+                mapTypeId: google.maps.MapTypeId.HYBRID
+            });
+
+            var marker = new google.maps.Marker({
+                position: shop,
+                map: map
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUdXwjgnH2uLObq5DncPne8qX-5by5I2c&callback=initMap" async
+        defer></script>
+
+    <script>w3.includeHTML();</script>
+</body>
+
+</html>
