@@ -21,6 +21,15 @@ a:active{
     color: white;
     text-decoration: none;
 }
+svg,  
+svg:visited,
+svg:focus{
+  fill: #978c8c99;
+}
+svg:hover,
+svg:active{
+  fill: white;
+}
 #head{
     float: right;
     color: white;
@@ -78,9 +87,7 @@ footer{
 } */
 
 .form {
-  /* background: rgba(19, 35, 47, 0.9); */
-  background: rgba(11, 48, 77, 0.9);  
-  /* background: white; */
+  background: rgba(19, 35, 47, 0.9);
   padding: 40px;
   max-width: 600px;
   margin: 40px auto;

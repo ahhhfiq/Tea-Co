@@ -2,7 +2,7 @@ category = "Drinks";
 
 function getMenu() {
     var request = new XMLHttpRequest();
-    request.open('Get')
+    request.open('GET',)
 
 }
 

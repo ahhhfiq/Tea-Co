@@ -2,6 +2,8 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
+// const routeLogin = require('.routes/loginroutes');
+// const routeRegister = require('.routes/register');
 //const routes = require('./routes/routeComments');
 
 var app = express();
@@ -14,6 +16,10 @@ app.use(express.static('./public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+var router = express.Router();
+
+// router.post('/register', registerController.register);
+// router.post('/login', login.login)
 //routes.routeComments(app);
 
 function gotoIndex(f, request, respond) {
