@@ -2,10 +2,7 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-// const routeLogin = require('.routes/loginroutes');
-// const routeRegister = require('.routes/register');
-//const routes = require('./routes/routeComments');
-
+const jwt = require('jsonwebtoken')
 var app = express();
 var host = "127.0.0.1";
 // var host = "192.168.42.176";
@@ -18,10 +15,6 @@ app.use(bodyParser.json());
 
 var router = express.Router();
 
-// router.post('/register', registerController.register);
-// router.post('/login', login.login)
-//routes.routeComments(app);
-
 function gotoIndex(f, request, respond) {
     respond.sendFile(__dirname + f);
 }
@@ -33,5 +26,5 @@ var server = app.listen(port, host, function() {
     var host = server.address().address;
     var port = server.address().port;
 
-    console.log("Example app listening at http://%s:%s", host, port);
+    console.log("Tea&Co app listening at http://%s:%s", host, port);
 });

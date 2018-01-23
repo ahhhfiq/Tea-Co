@@ -71,7 +71,111 @@ footer{
     text-align: center;
 }
 /* End of base CSS */
-.logBox h1{
-    float: right;
+
+#gold::before{
+    background-color:#FFD700;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    margin-right: 10px;
+    position: relative;
+    vertical-align: middle;
+    width: 20%;
+}
+
+#gold{
+    padding-top: 30px;
+    color: 	#FFD700;
     text-align: center;
+    font-size: 1em;
+    margin-bottom: 0;
+    letter-spacing: 2px;
+}
+#gold::after{
+    background-color:#FFD700;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    margin-left: 10px;
+    position: relative;
+    vertical-align: middle;
+    width: 20%;
+}
+.ben-desc{
+    color: white;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.ben-desc img{
+    display: block;
+    margin: auto;
+}
+#desc{
+    line-height: 1.2em;
+    margin: 0.2em 0 0; 
+    display:block;
+    text-align: center;
+    padding-top:0;
+    padding-bottom: 20px;
+    font-size: 13px;
+    margin: 0;
+    color: rgba(175, 175, 175,0.5);
+}
+#silver::before{
+    background-color:#C0C0C0;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    margin-right: 10px;
+    position: relative;
+    vertical-align: middle;
+    width: 20%;
+}
+
+#silver{
+    padding-top: 30px;
+    color: 	#C0C0C0;
+    text-align: center;
+    font-size: 1em;
+    margin-bottom: 0;
+    letter-spacing: 2px;
+}
+#silver::after{
+    background-color:#C0C0C0;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    margin-left: 10px;
+    position: relative;
+    vertical-align: middle;
+    width: 20%;
+}
+#bronze::before{
+    background-color:#c2a661;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    margin-right: 10px;
+    position: relative;
+    vertical-align: middle;
+    width: 20%;
+}
+
+#bronze{
+    padding-top: 30px;
+    color: 	#c2a661;
+    text-align: center;
+    font-size: 1em;
+    margin-bottom: 0;
+    letter-spacing: 2px;
+}
+#bronze::after{
+    background-color:#c2a661;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    margin-left: 10px;
+    position: relative;
+    vertical-align: middle;
+    width: 20%;
 }

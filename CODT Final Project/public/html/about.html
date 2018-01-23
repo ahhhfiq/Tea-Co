@@ -64,19 +64,39 @@
     <script> 
         //1.300888, 103.859043 
         var map;
+        var shopLoc = [
+            ['Tampines Mall', 1.352614, 103.944693, 5],
+            ['JCube', 1.333236, 103.740229, 3],
+            ['VivoCity', 1.264282, 103.822158, 2],
+            ['HQ', 1.300888, 103.859043, 1]
+        ]
         var shop = { lat: 1.300888, lng: 103.859043 };
         function initMap() {
             map = new google.maps.Map(document.getElementById('map'), {
-                center: shop,
-                zoom: 18,
+                center: new google.maps.LatLng(1.360961404649149, 103.8117882630468),
+                zoom: 10,
                 mapTypeId: google.maps.MapTypeId.HYBRID
             });
 
-            var marker = new google.maps.Marker({
-                position: shop,
-                map: map
-            });
+            var infowindow = new google.maps.InfoWindow();
+
+            var marker, i;
+
+            for (i = 0; i < shopLoc.length; i++) {
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(shopLoc[i][1], shopLoc[i][2]),
+                    map: map
+                });
+
+                google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                    return function () {
+                        infowindow.setContent(shopLoc[i][0]);
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+            }
         }
+
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUdXwjgnH2uLObq5DncPne8qX-5by5I2c&callback=initMap" async
         defer></script>

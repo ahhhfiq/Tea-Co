@@ -40,3 +40,7 @@ function showItems(category) {
     }
 
 }
+function menuModal() {
+    var menuModal = new Modal(document.getElementById("showMenu"));
+    menuModal.show();
+}
