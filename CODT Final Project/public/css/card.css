@@ -179,3 +179,6 @@ footer{
     vertical-align: middle;
     width: 20%;
 }
+.imgContainer{
+    float: left;
+}
