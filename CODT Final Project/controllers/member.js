@@ -9,8 +9,12 @@ function register(request,respond) {
     var now = new Date();
 
     var userReg = {
+        "firstName":request.body.firstName,
+        "lastName": request.body.lastName,
+        "email": request.body.email,
         "username":request.body.username,
-        "password":request.body.password
+        "password":request.body.password,
+        "dateCreated": request.body.dateCreated
     };
        
     loginDB.registerUser(userReg, function (error, result) {
@@ -24,7 +28,7 @@ function register(request,respond) {
         else {
             var token = jwt.sign({"username": result.Username}, "secretstring",{expiresIn:3000} )
             respond.status(200).json({
-                token,    
+                token,
                 "username": result.Username,            
                 "message": "Success"
             });

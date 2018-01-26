@@ -35,24 +35,6 @@ app.use((req,res,next) =>{
     }
 })
 
-app.route('/user',(req,res,next) =>{
-    var token = req.body.token || req.query.token || req.headers['x-access-token'];
-    if (token) {
-        jwt.verify(token, "secretstring", (err, decode) => {
-            if (err) {
-                window.location.href = "/login.html";
-                res.status(403).json({
-                    message: "Wrong Token"
-                })
-            }
-            else {
-                req.decode = decode;
-                console.log("valid token");
-                next();
-            }
-        })
-    }
-})
 
 function gotoIndex(f, request, respond) {
     respond.sendFile(__dirname + f);

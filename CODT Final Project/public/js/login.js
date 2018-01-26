@@ -44,60 +44,53 @@ function login() {
 
 }
 
+function checkPass() {
+
+    var regPassword = document.getElementById("regPass");
+    var rePass = document.getElementById("repass");
+
+    if (rePass.value == regPassword.value) {
+        alert("Password Match");
+    }
+    else{
+        rePass.setCustomValidity("Password does not match");
+    }
+}
+
 function register() {
     var registerUser = new XMLHttpRequest();
     registerUser.open('POST', register_url, true);
-    // var today = new Date();
-    // var eighteen = false;
+    
 
-    var fName = document.getElementById("firstName").value;
-    var lName = document.getElementById("lastName").value;
+    var firstName = document.getElementById("firstName").value;
+    var lastName = document.getElementById("lastName").value;
     var regUserName = document.getElementById("regUserName").value;
-    var regEmail = document.getElementById("regEmail").value;
+    var email = document.getElementById("regEmail").value;
     var regPassword = document.getElementById("regPass").value;
-    var DOB = document.getElementById("DOB");
+    var dateCreated = new Date();
 
-    // var eighteenYearsAgo = moment().subtract(18, "years");
-    // var birthday = moment(DOB);
 
-    // if (!birthday.isValid()) {
-    //     return "invalid date";
-    // }
-    // else if (eighteenYearsAgo.isAfter(birthday)) {
-    //     eighteen = true;
-    // }
-    // else {
-    //     return "sorry, no";
-    // }
-
-    // "firstName": fName,
-    // "lastName":lName,
-    // "email": regEmail,
-    // "dateCreated":today,
-    // "DOB":DOB
     var registerData = {
+        "firstName": firstName,
+        "lastName": lastName,
         "username": regUserName,
-        "password": regPassword
+        "password": regPassword,
+        "email": email,
+        "dateCreated": dateCreated
     }
 
-    // if (password == retype && eighteen) {
-    //     console.log("its the same");
+    console.log(registerData)
 
     registerUser.setRequestHeader("Content-Type", "application/json");
     registerUser.onload = function () {
-        var output = JSON.parse(registerUser.responseText);        
+        var output = JSON.parse(registerUser.responseText);
         if (output.token) {
             sessionStorage.setItem("token", output.token);
-            sessionStorage.setItem("username", output.username);            
+            sessionStorage.setItem("username", output.username);
             window.location.href = "/index.html";
         } else {
             alert(output.message);
         }
     };
     registerUser.send(JSON.stringify(registerData));
-
 }
-    // else {
-    //     alert("Your password does not match");
-    // }
-    
