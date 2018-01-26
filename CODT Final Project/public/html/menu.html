@@ -9,13 +9,14 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Order Here :D</title>
     <meta name="description" content="">
     <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/menu.css">
     <link rel="icon" href="../images/Coffee Time.ico">
     <link href="https://fonts.googleapis.com/css?family=Merriweather|Playfair+Display|Ubuntu|Courgette|Signika|Lato" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Your code is so messy its not spaghetti. Its worms :(
         You need to add in stuff to the database to use the search function -->
@@ -25,8 +26,43 @@
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <div w3-include-html=navbar1.html></div>
-        
+    <nav class="navbar navbar-expand-xl">
+        <h1 id="comName">
+            <a href="../index.html" style="color:white;padding-top:10px;">Tea & Co.</a>
+        </h1>
+
+        <button class="navbar-toggler custom-toggle" type="button" data-toggle="collapse" data-target="#list" aria-controls="list"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse" id="list">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="../index.html" class="mbar nav-link">Home</a>
+                </li>
+                <li class="nav-item ">
+                    <a href="about.html" class="mbar nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="menu.html" class="mbar nav-link">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a href="card.html" class="mbar nav-link">Rewards</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" id="loginLink2" class="mbar nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="cart.html" id="cart" class="mbar cartDis cartApp nav-link">
+                        <img src="../images/shopping-cart.svg" onmouseover="this.src='../images/shopping-cartw.svg'" onmouseout="this.src='../images/shopping-cart.svg'"
+                            onmouseover="" id="cart" alt="cart" style="width:30px; height:28px; margin-left:15px;margin-right:15px;">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
     <main>
         <div class="container-fluid">
             <div class="row">
@@ -34,20 +70,22 @@
                     <div class="input-group searchBar">
                         <input type="text" class="form-control" placeholder="Search for...">
                         <span class="input-group-btn">
-                            <button class="btn btn-outline-dark" id="rad" type="button"><img src="../images/search.svg" height="30px" width="30px"></button>
+                            <button class="btn btn-outline-dark" id="rad" type="button">
+                                <img src="../images/search.svg" height="30px" width="30px">
+                            </button>
                         </span>
                     </div>
-                    <div>
+                    <div class="flex-row">
                         <a href="#">
                             <h1 onclick="drinkSelect()" id="drinks" class="menuTitle activate">Drinks </h1>
                         </a>
                     </div>
-                    <div>
+                    <div class="flex-row">
                         <a href="#">
                             <h1 onclick="foodSelect()" id="food" class="menuTitle">Food</h1>
                         </a>
                     </div>
-                    <div>
+                    <div class="flex-row">
                         <a href="#">
                             <h1 onclick="bnbSelect()" id="bnb" class="menuTitle">Bag
                                 <span style="font-family:'Playfair Display', serif;">&</span> Beans</h1>
@@ -57,77 +95,77 @@
 
                 <div class="col-sm-9">
                     <div class="responsive">
-                        <div class="gallery">
-                            <a href="#" onclick="menuModal()">
+                        <a href="#" onclick="menuModal()">
+                            <div class="gallery">
                                 <img src="../images/teait.jpg" alt="Tea Cup" width="300" height="200">
-                            </a>
-                            <!-- <div class="title">Title: Big Tea</div>                             -->
-                            <div class="desc">Add a description of the image here</div>
-                        </div>
+                                <!-- <div class="title">Title: Big Tea</div>                             -->
+                                <div class="desc">Add a description of the image here</div>
+                            </div>
+                        </a>
                     </div>
                     <div class="responsive">
-                        <div class="gallery">
-                            <a href="#" onclick="menuModal()">
+                        <a href="#" onclick="menuModal()">
+                            <div class="gallery">
                                 <img src="../images/brewcoffee.jpg" alt="Brewed Coffee" width="600" height="400">
-                            </a>
-                            <div class="desc">Add a description of the image here</div>
-                        </div>
+                                <div class="desc">Add a description of the image here</div>
+                            </div>
+                        </a>
                     </div>
 
                     <div class="responsive">
-                        <div class="gallery">
-                            <a href="#" onclick="menuModal()">
+                        <a href="#" onclick="menuModal()">
+                            <div class="gallery">
                                 <img src="../images/coldtea.jpg" alt="Northern Lights" width="600" height="400">
-                            </a>
-                            <div class="desc">Add a description of the image here</div>
-                        </div>
+                                <div class="desc">Add a description of the image here</div>
+                            </div>
+                        </a>
                     </div>
 
                     <div class="responsive">
-                        <div class="gallery">
-                            <a href="#" onclick="menuModal()">
+                        <a href="#" onclick="menuModal()">
+                            <div class="gallery">
                                 <img src="../images/cap-coffee.jpeg" alt="Mountains" width="600" height="400">
-                            </a>
-                            <div class="desc">Add a description of the image here</div>
-                        </div>
+                                <div class="desc">Add a description of the image here</div>
+                            </div>
+                        </a>
                     </div>
                     <!-- first row -->
 
                     <div class="responsive">
-                        <div class="gallery">
-                            <a href="#" onclick="menuModal()">
+                        <a href="#" onclick="menuModal()">
+                            <div class="gallery">
                                 <img src="../images/teait.jpg" alt="Trolltunga Norway" width="300" height="200">
-                            </a>
-                            <div class="desc">Add a description of the image here</div>
-                        </div>
+                                <div class="desc">Add a description of the image here</div>
+                            </div>
+                        </a>
                     </div>
 
 
                     <div class="responsive">
-                        <div class="gallery">
-                            <a href="#" onclick="menuModal()">
+                        <a href="#" onclick="menuModal()">
+                            <div class="gallery">
                                 <img src="../images/brewcoffee.jpg" alt="Forest" width="600" height="400">
-                            </a>
-                            <div class="desc">Add a description of the image here</div>
-                        </div>
+                                <div class="desc">Add a description of the image here</div>
+                            </div>
+                        </a>
                     </div>
 
                     <div class="responsive">
-                        <div class="gallery">
-                            <a href="#" onclick="menuModal()">
+                        <a href="#" onclick="menuModal()">
+                            <div class="gallery">
                                 <img src="../images/coldtea.jpg" alt="Northern Lights" width="600" height="400">
-                            </a>
-                            <div class="desc">Add a description of the image here</div>
-                        </div>
+                                <div class="desc">Add a description of the image here</div>
+                            </div>
+                        </a>
                     </div>
 
                     <div class="responsive">
-                        <div class="gallery">
-                            <a href="#" onclick="menuModal()">
+                        <a href="#" onclick="menuModal()">
+                            <div class="gallery">
                                 <img src="../images/cap-coffee.jpeg" alt="Mountains" width="600" height="400">
-                            </a>
-                            <div class="desc">Add a description of the image here</div>
-                        </div>
+                                <div class="desc">Add a description of the image here</div>
+                            </div>
+                        </a>
                     </div>
 
                 </div>
@@ -153,7 +191,7 @@
     <script>w3.includeHTML();</script>
 
     <script src="../js/menu.js"></script>
-    <script src="../js/app.js"></script>
+    <script src="../js/app2.js"></script>
 
 </body>
 

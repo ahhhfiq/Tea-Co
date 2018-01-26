@@ -4,6 +4,9 @@ body {
   background-color: #272727;
   /* overflow:hidden;  */
 }
+.bg-dark{
+  background-color: #272727;  
+}
 html {
   overflow: scroll;
 }
@@ -138,16 +141,24 @@ div.title{
   font-family: "Signika", "Times New Roman", Times, serif;
   padding: 15px;
   color: #978c8c99;
-  margin-bottom: 20px;
-  border: 5px solid #978c8c99;
+  margin-bottom: 5px;
+  /* border: 5px solid #978c8c99; */
   /* text-decoration:line-through; */
-  border-radius: 30px 3px 30px 3px;
+}
+@media(max-width:767px){
+  header .breadcrumb {
+    display: none;
+  }
+}
+@media(min-width:768px){
+  header .navbar {
+    display: none;   
+  }
 }
 
 .activate {
   color: white;
   /* text-decoration:underline; */
-  border: 5px solid white;
 }
 .searchBar {
   /* padding: 5px; */
@@ -156,4 +167,7 @@ div.title{
 #rad{
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
+}
+.flex-row{
+  flex-direction: row;
 }

@@ -13,6 +13,7 @@
     <title>Tea & Co</title>
     <meta name="description" content="">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/Coffee Time.ico">
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
@@ -25,7 +26,42 @@
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <div w3-include-html=html/navbar.html></div>
+    <nav class="navbar navbar-expand-xl">
+        <h1 id="comName">
+            <a href="../index.html" style="color:white;padding-top:10px;">Tea & Co.</a>
+        </h1>
+
+        <button class="navbar-toggler custom-toggle" type="button" data-toggle="collapse" data-target="#list" aria-controls="list"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse" id="list">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="index.html" class="mbar nav-link">Home</a>
+                </li>
+                <li class="nav-item ">
+                    <a href="html/about.html" class="mbar nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="html/menu.html" class="mbar nav-link">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a href="html/card.html" class="mbar nav-link">Rewards</a>
+                </li>
+                <li class="nav-item">
+                    <a href="html/login.html" id="loginLink" class="mbar nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="html/cart.html" id="cart" class="mbar cartDis cartApp nav-link">
+                        <img src="../images/shopping-cart.svg" onmouseover="this.src='../images/shopping-cartw.svg'" onmouseout="this.src='../images/shopping-cart.svg'"
+                            onmouseover="" id="cart" alt="cart" style="width:30px; height:28px; margin-left:15px;margin-right:15px;">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <!-- End Of Header/nav bar -->
     <!-- End of base -->
     <main>
@@ -39,7 +75,7 @@
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
-        
+
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -49,7 +85,7 @@
                             <p>8:30AM-10:00PM Everyday</p>
                         </div>
                     </div>
-        
+
                     <div class="carousel-item">
                         <img class="d-block w-100 img-responsive cover " src="images/teacup.jpg" alt="Coffee sheet" style="width:900px;height:550px">
                         <div class="carousel-caption d-none d-md-block">
@@ -57,7 +93,7 @@
                             <p style=" font-family: Courgette, Times, Serif">"Rate 5/7"-IGN</p> -->
                         </div>
                     </div>
-        
+
                     <div class="carousel-item">
                         <img class="d-block w-100 img-responsive cover" src="images/coffeebrew.jpg" alt="Coffee Cup" style="width:900px;height:550px;">
                         <div class="carousel-caption">
@@ -65,17 +101,17 @@
                             <p>
                                 <a class="btn btn-lg btn-info" href="html/login.html" role="button" style="color:white;">Sign up today</a>
                             </p>
-                        </div> 
+                        </div>
                     </div>
-        
-        
+
+
                 </div>
             </div>
         </div>
         <!-- End of image carousel -->
-        </main>
+    </main>
 
-        <!-- <img class="first-slide" style="align: center;" src="/images/teait.jpg" alt="First slide">
+    <!-- <img class="first-slide" style="align: center;" src="/images/teait.jpg" alt="First slide">
         <div class="container">
             <div class="carousel-caption">
                 <h1>Create an account with us</h1>
@@ -85,7 +121,7 @@
                     <a class="btn btn-lg btn-info" href="html/login.html" role="button" style="color:white;">Sign up today</a>
                 </p>
             </div> -->
-            <!-- End of image carousel -->
+    <!-- End of image carousel -->
     </main>
 
     <footer>
@@ -146,10 +182,10 @@
         //1.300888, 103.859043 
         var map;
         var shopLoc = [
-            ['Tampines Mall', 1.352614, 103.944693,5],
-            ['JCube', 1.333236, 103.740229,3],
-            ['VivoCity', 1.264282, 103.822158,2],
-            ['HQ', 1.300888, 103.859043,1]
+            ['Tampines Mall', 1.352614, 103.944693, 5],
+            ['JCube', 1.333236, 103.740229, 3],
+            ['VivoCity', 1.264282, 103.822158, 2],
+            ['HQ', 1.300888, 103.859043, 1]
         ]
         var shop = { lat: 1.300888, lng: 103.859043 };
         function initMap() {
@@ -177,7 +213,7 @@
                 })(marker, i));
             }
         }
-        
+
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUdXwjgnH2uLObq5DncPne8qX-5by5I2c&callback=initMap" async
         defer></script>

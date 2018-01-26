@@ -1,16 +1,17 @@
 var isLoggedIn = false;
 var version = '1.0.8';
 
+var userName = sessionStorage.getItem("username");
 
 
-function showUser() {
+if (sessionStorage.getItem("username") != undefined) {
+    document.getElementById("loginLink").innerHTML=
+    document.getElementById("loginLink").setAttribute('href', 'html/user.html')
+
+    document.getElementById("cart").classList.remove("cartDis")
 
 }
 
-function showTnC() {
-    var TnCmodal = new Modal(document.getElementById("tncModal"));
-    TnCmodal.show();
-}
 function version() {
     console.log(version)
 }

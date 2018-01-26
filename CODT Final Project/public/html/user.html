@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/user.css">
+    <link rel="icon" href="../images/Coffee Time.ico">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Playfair+Display|Ubuntu|Courgette|Lato" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> -->
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+
+    <nav class="navbar navbar-expand-xl">
+        <h1 id="comName">
+            <a href="../index.html" style="color:white;padding-top:10px;">Tea & Co.</a>
+        </h1>
+        <button class="navbar-toggler custom-toggle" type="button" data-toggle="collapse" data-target="#list" aria-controls="list"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse" id="list">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="../index.html" class="mbar nav-link">Home</a>
+                </li>
+                <li class="nav-item ">
+                    <a href="about.html" class="mbar nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="menu.html" class="mbar nav-link">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a href="card.html" class="mbar nav-link">Rewards</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" id="loginLink2" class="mbar nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="cart.html" id="cart" class="mbar cartDis cartApp nav-link">
+                        <img src="../images/shopping-cart.svg" onmouseover="this.src='../images/shopping-cartw.svg'" onmouseout="this.src='../images/shopping-cart.svg'"
+                            onmouseover="" id="cart" alt="cart" style="width:30px; height:28px; margin-left:15px;margin-right:15px;display:none">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <button class="btn btn-primary" onclick="logout()">Logout</button>
+
+    <div w3-include-html=footer.html></div>
+
+    <!-- Check date -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.4.0/moment.min.js"></script>
+    <!--Using Jquery library -->
+    <script src="../js/jquery-3.3.1.js"></script>
+    <!--using bootstrap js for effects like modals -->
+    <script src="../js/bootstrap-native-v4.js"></script>
+    <!--a dependcy library required by bootstrap js -->
+    <script src="../js/popper.js"></script>
+    <!--a simple library so that html tags can be separated into other files - neater and cleaner -->
+    <script src="../js/w3.js"></script>
+    <!--where pure javascript resides -->
+    <script src="../js/app2.js"></script>
+    <script src="../js/user.js"></script>
+    <script>w3.includeHTML();</script>
+</body>
+
+</html>

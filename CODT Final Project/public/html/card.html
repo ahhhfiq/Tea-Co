@@ -13,6 +13,7 @@
     <meta name="description" content="">
     <link rel="icon" href="../images/Coffee Time.ico">
     <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/card.css">
     <link href="https://fonts.googleapis.com/css?family=Merriweather|Playfair+Display|Ubuntu|Courgette|Signika|Lato" rel="stylesheet">
     <meta name=" viewport " content="width=device-width, initial-scale=1 ">
@@ -22,7 +23,42 @@
     <!--[if lt IE 7]>
             <p class="browsehappy ">You are using an <strong>outdated</strong> browser. Please <a href="# ">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <div w3-include-html=navbar1.html></div>
+    <nav class="navbar navbar-expand-xl">
+        <h1 id="comName">
+            <a href="../index.html" style="color:white;padding-top:10px;">Tea & Co.</a>
+        </h1>
+
+        <button class="navbar-toggler custom-toggle" type="button" data-toggle="collapse" data-target="#list" aria-controls="list"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse" id="list">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="../index.html" class="mbar nav-link">Home</a>
+                </li>
+                <li class="nav-item ">
+                    <a href="about.html" class="mbar nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="menu.html" class="mbar nav-link">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a href="card.html" class="mbar nav-link">Rewards</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" id="loginLink2" class="mbar nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="cart.html" id="cart" class="mbar cartDis cartApp nav-link">
+                        <img src="../images/shopping-cart.svg" onmouseover="this.src='../images/shopping-cartw.svg'" onmouseout="this.src='../images/shopping-cart.svg'"
+                            onmouseover="" id="cart" alt="cart" style="width:30px; height:28px; margin-left:15px;margin-right:15px;">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
     <div>
         <h1 style="color:white; text-align:center;padding-top:2.5rem;letter-spacing:2px;">Get rewarded
@@ -35,7 +71,7 @@
     </div>
     <div>
         <p id="gold">
-            Gold Level | 350+ 
+            Gold Level | 350+
             <img src="../images/bean.svg" width="23px" height="23px" alt="">
         </p>
         <p id="desc">
@@ -77,8 +113,8 @@
         </div>
     </div>
     <p id="silver">
-        Silver Level | 60-349 
-            <img src="../images/bean.svg" width="23px" height="23px" alt="">        
+        Silver Level | 60-349
+        <img src="../images/bean.svg" width="23px" height="23px" alt="">
     </p>
     <p id="desc">
         (Includes All Basic Benefits)
@@ -120,8 +156,8 @@
     </div>
     <p id="bronze">
         Bronze Level | 0-60
-            <img src="../images/bean.svg" width="23px" height="23px" alt="">
-        
+        <img src="../images/bean.svg" width="23px" height="23px" alt="">
+
     </p>
     <div>
         <div class="column">
@@ -203,7 +239,7 @@
     <script src="../js/w3.js"></script>
     <!--where pur javascript resides -->
     <script>w3.includeHTML();</script>
-    <script src="../js/app.js"></script>
+    <script src="../js/app2.js"></script>
 
 
 </body>

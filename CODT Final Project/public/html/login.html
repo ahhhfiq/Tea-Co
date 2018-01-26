@@ -9,14 +9,15 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login</title>
     <meta name="description" content="">
     <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/login.css">
     <link rel="icon" href="../images/Coffee Time.ico">
     <link href="https://fonts.googleapis.com/css?family=Merriweather|Playfair+Display|Ubuntu|Courgette|Lato" rel="stylesheet">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -24,7 +25,43 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-    <div w3-include-html=navbar1.html></div>
+
+
+    <nav class="navbar navbar-expand-xl">
+        <h1 id="comName">
+            <a href="../index.html" style="color:white;padding-top:10px;">Tea & Co.</a>
+        </h1>
+        <button class="navbar-toggler custom-toggle" type="button" data-toggle="collapse" data-target="#list" aria-controls="list"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse" id="list">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="../index.html" class="mbar nav-link">Home</a>
+                </li>
+                <li class="nav-item ">
+                    <a href="about.html" class="mbar nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="menu.html" class="mbar nav-link">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a href="card.html" class="mbar nav-link">Rewards</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" id="loginLink2" class="mbar nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="cart.html" id="cart" class="mbar cartDis cartApp nav-link">
+                        <img src="../images/shopping-cart.svg" onmouseover="this.src='../images/shopping-cartw.svg'" onmouseout="this.src='../images/shopping-cart.svg'"
+                            onmouseover="" id="cart" alt="cart" style="width:30px; height:28px; margin-left:15px;margin-right:15px;display:none">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
     <div class="form">
 
@@ -45,11 +82,10 @@
                 <form action="/" method="post">
 
                     <div class="field-wrap">
-                        <input type="email" required autocomplete="off" placeholder="Email *"/>
+                        <input type="text" id="userName" required autocomplete="off" placeholder="Username *" />
                     </div>
-
                     <div class="field-wrap">
-                        <input id="password" type="password" required autocomplete="off" placeholder="Password">
+                        <input id="password" type="password" id="logPassword" required autocomplete="off" placeholder="Password">
                         <!-- <button class="btn btn-outline-dark pull-left"><img src="../images/eye.svg" alt="password not shown" style="height:50px; width: 50px;" ></button> -->
                     </div>
 
@@ -57,13 +93,11 @@
                         <a href="#">Forgot Password?</a>
                     </p>
 
-                    <button class="button button-block" onclick="" />Log In</button>
+                    <button class="button button-block" onclick="login()" />Log In</button>
 
                 </form>
 
             </div>
-
-
 
             <div id="signup">
                 <h1>Sign Up for Free</h1>
@@ -72,20 +106,22 @@
 
                     <div class="top-row">
                         <div class="field-wrap">
-                            <input type="text" required autocomplete="off" placeholder="First Name *" />
+                            <input type="text" required id="firstName" autocomplete="off" placeholder="First Name *" />
                         </div>
 
                         <div class="field-wrap">
-                            <input type="text" required autocomplete="off" placeholder="Last Name *" />
+                            <input type="text" required id="lastName" autocomplete="off" placeholder="Last Name *" />
                         </div>
                     </div>
-
                     <div class="field-wrap">
-                        <input type="email" required autocomplete="off" placeholder="Email *" />
+                        <input type="text" id="regUserName" required autocomplete="off" placeholder="Username *" />
+                    </div>
+                    <div class="field-wrap">
+                        <input type="email" id="regEmail" required autocomplete="off" placeholder="Email *" />
                     </div>
 
                     <div class="field-wrap">
-                        <input type="password" id="pass" required autocomplete="off" placeholder="Password *" />
+                        <input type="password" id="regPass" minlength="6" required autocomplete="off" placeholder="Password *" />
                     </div>
 
                     <div class="field-wrap">
@@ -94,10 +130,12 @@
 
                     <div class="field-wrap">
                         <!-- <h4 id="birthday">Birthday <span class="req">*</span> </h4> -->
-                        <input type="date">
+                        <input type="date" id="DOB" required>
                     </div>
-                    <p style="color: white;">By signing up you are accepting to our <a style="text-decoration:underline; color:#007bff ;" href="#" onclick="showTnC()">Terms and conditions</a></p>
-                    <button type="submit" id="submit" onclick="register" class="button button-block">Get Started</button>
+                    <p style="color: white;">By signing up you are accepting to our
+                        <a style="text-decoration:underline; color:#007bff ;" href="#" onclick="showTnC()">Terms and conditions</a>
+                    </p>
+                    <button type="submit" id="submit" onclick="register()" class="button button-block">Get Started</button>
 
                 </form>
 
@@ -113,18 +151,19 @@
 
     <div w3-include-html=footer.html></div>
 
-    <!--a dependcy library required by bootstrap js -->
-    <script src="../js/popper.js"></script>
+    <!-- Check date -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.4.0/moment.min.js"></script>
+    <!--Using Jquery library -->
+    <script src="../js/jquery-3.3.1.js"></script>
     <!--using bootstrap js for effects like modals -->
     <script src="../js/bootstrap-native-v4.js"></script>
+    <!--a dependcy library required by bootstrap js -->
+    <script src="../js/popper.js"></script>
     <!--a simple library so that html tags can be separated into other files - neater and cleaner -->
     <script src="../js/w3.js"></script>
-    <!--Using Jquery library -->
-    <script src="../js/jquery-3.2.1.js"></script>
     <!--where pure javascript resides -->
+    <script src="../js/app2.js"></script>
     <script src="../js/login.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="../js/app.js"></script>
     <script>w3.includeHTML();</script>
 </body>
 
