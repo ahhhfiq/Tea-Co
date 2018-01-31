@@ -50,7 +50,7 @@ function checkPass() {
     var rePass = document.getElementById("repass");
 
     if (rePass.value == regPassword.value) {
-        alert("Password Match");
+        register();
     }
     else{
         rePass.setCustomValidity("Password does not match");
@@ -86,7 +86,7 @@ function register() {
         var output = JSON.parse(registerUser.responseText);
         if (output.token) {
             sessionStorage.setItem("token", output.token);
-            sessionStorage.setItem("username", output.username);
+            sessionStorage.setItem("username", registerData.usernamenode );
             window.location.href = "/index.html";
         } else {
             alert(output.message);

@@ -1,0 +1,15 @@
+.flex-row{
+  flex-direction: row;
+}
+.userSelection {
+  text-align: center;
+  font-family: "Signika", "Times New Roman", Times, serif;
+  padding: 15px;
+  color: #978c8c99;
+  margin-bottom: 5px;
+  /* border: 5px solid #978c8c99; */
+  /* text-decoration:line-through; */
+}
+.chosen{
+    color: white;
+}

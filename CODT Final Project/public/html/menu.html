@@ -68,7 +68,7 @@
             <div class="row">
                 <div class="col-sm-3">
                     <div class="input-group searchBar">
-                        <input type="text" class="form-control" placeholder="Search for...">
+                        <input type="search" id="searchBar" class="form-control" onkeyup="search()" placeholder="Search for...">
                         <span class="input-group-btn">
                             <button class="btn btn-outline-dark" id="rad" type="button">
                                 <img src="../images/search.svg" height="30px" width="30px">
@@ -87,88 +87,13 @@
                     </div>
                     <div class="flex-row">
                         <a href="#">
-                            <h1 onclick="bnbSelect()" id="bnb" class="menuTitle">Bag
-                                <span style="font-family:'Playfair Display', serif;">&</span> Beans</h1>
+                            <h1 onclick="dessertSelect()" id="dessert" class="menuTitle">Dessert</h1>
                         </a>
                     </div>
                 </div>
-
-                <div class="col-sm-9">
-                    <div class="responsive">
-                        <a href="#" onclick="menuModal()">
-                            <div class="gallery">
-                                <img src="../images/teait.jpg" alt="Tea Cup" width="300" height="200">
-                                <!-- <div class="title">Title: Big Tea</div>                             -->
-                                <div class="desc">Add a description of the image here</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="responsive">
-                        <a href="#" onclick="menuModal()">
-                            <div class="gallery">
-                                <img src="../images/brewcoffee.jpg" alt="Brewed Coffee" width="600" height="400">
-                                <div class="desc">Add a description of the image here</div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="responsive">
-                        <a href="#" onclick="menuModal()">
-                            <div class="gallery">
-                                <img src="../images/coldtea.jpg" alt="Northern Lights" width="600" height="400">
-                                <div class="desc">Add a description of the image here</div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="responsive">
-                        <a href="#" onclick="menuModal()">
-                            <div class="gallery">
-                                <img src="../images/cap-coffee.jpeg" alt="Mountains" width="600" height="400">
-                                <div class="desc">Add a description of the image here</div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- first row -->
-
-                    <div class="responsive">
-                        <a href="#" onclick="menuModal()">
-                            <div class="gallery">
-                                <img src="../images/teait.jpg" alt="Trolltunga Norway" width="300" height="200">
-                                <div class="desc">Add a description of the image here</div>
-                            </div>
-                        </a>
-                    </div>
-
-
-                    <div class="responsive">
-                        <a href="#" onclick="menuModal()">
-                            <div class="gallery">
-                                <img src="../images/brewcoffee.jpg" alt="Forest" width="600" height="400">
-                                <div class="desc">Add a description of the image here</div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="responsive">
-                        <a href="#" onclick="menuModal()">
-                            <div class="gallery">
-                                <img src="../images/coldtea.jpg" alt="Northern Lights" width="600" height="400">
-                                <div class="desc">Add a description of the image here</div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="responsive">
-                        <a href="#" onclick="menuModal()">
-                            <div class="gallery">
-                                <img src="../images/cap-coffee.jpeg" alt="Mountains" width="600" height="400">
-                                <div class="desc">Add a description of the image here</div>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
+                <!-- Start of menu -->
+                    <div id="menuTable" class="col-sm-9"></div>
+                <!-- End of menu -->
             </div>
 
         </div>

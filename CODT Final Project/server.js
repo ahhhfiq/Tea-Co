@@ -3,6 +3,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const routeAuth = require('./routes/routeLogin');
+const routeMenu = require('./routes/routeMenu');
 const jwt = require('jsonwebtoken');
 
 var app = express();
@@ -16,6 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 routeAuth.routeMember(app);
+routeMenu.routeMenu(app);
 
 app.use((req,res,next) =>{
     var token = req.body.token || req.query.token || req.headers['x-access-token'];
