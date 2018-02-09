@@ -16,7 +16,7 @@ function register(request,respond) {
         "password":request.body.password,
         "dateCreated": request.body.dateCreated
     };
-       
+    
     loginDB.registerUser(userReg, function (error, result) {
         console.log(result)
         if (error || result.length == 0) {

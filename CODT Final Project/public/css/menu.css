@@ -170,3 +170,33 @@ div.title{
 .flex-row{
   flex-direction: row;
 }
+.commentTitle::before{
+    background-color: #7c7c7c;
+    content: "";
+    display: inline-block;
+    height: 0.5px;
+    position: relative;
+    vertical-align: middle;
+    width: 20%;
+
+}
+.commentTitle{
+  color: #7c7c7c;  
+  text-align:center;
+  
+}
+.commentTitle::after{
+    background-color:#7c7c7c;
+    content: "";
+    display: inline-block;
+    height: 0.5px;
+    position: relative;
+    vertical-align: middle;
+    width: 20%;
+
+}
+.commentTitle span{
+  /* border: 1px solid black;  */
+  padding:5px 10px 5px 10px;
+  font-family: "Poppins", 'Times New Roman', Times, serif;
+}

@@ -4,6 +4,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const routeAuth = require('./routes/routeLogin');
 const routeMenu = require('./routes/routeMenu');
+const routeComments = require('./routes/routeComment');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 var app = express();
@@ -18,6 +20,7 @@ app.use(bodyParser.json());
 
 routeAuth.routeMember(app);
 routeMenu.routeMenu(app);
+routeComments.routeComments(app);
 
 app.use((req,res,next) =>{
     var token = req.body.token || req.query.token || req.headers['x-access-token'];

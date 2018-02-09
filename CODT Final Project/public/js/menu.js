@@ -35,7 +35,7 @@ function displayMenu(category) {
                             <div class="responsive">\
                                 <a href="#" onclick="menuModal('+count+')" >\
                                     <div class="gallery">\
-                                        <img class="img-fluid" src=" '+ image + ' " alt="'+ title +'">\
+                                        <img class="img-fluid" style="height:150px; width:100%;" src=" '+ image + ' " alt="'+ title +'">\
                                         <div class="desc">'+ title + '</div>\
                                     </div>\
                                 </a>\
@@ -47,22 +47,13 @@ function displayMenu(category) {
     }
 }
 
-function menuModal(item) {
-    document.getElementById("menuTitle").innerHTML = menu_array[item].category;
-    document.getElementById("menuImage").src = "https://ahhhfiq.github.io/images/" + menu_array[item].productImage;
-    document.getElementById("productName").innerHTML = menu_array[item].name;
-    document.getElementById("desc").innerHTML = menu_array[item].desc;
-    document.getElementById("price").innerHTML = menu_array[item].price;
-    var menuModal = new Modal(document.getElementById("showMenu"));
-    menuModal.show();
-}
+
 
 
 function foodSelect() {
     document.getElementById("food").classList.add("activate");
     document.getElementById("drinks").classList.remove("activate");
     document.getElementById("dessert").classList.remove("activate");
-
     category = "Food";
     displayMenu(category)
 }
@@ -70,7 +61,6 @@ function drinkSelect() {
     document.getElementById("food").classList.remove("activate");
     document.getElementById("drinks").classList.add("activate");
     document.getElementById("dessert").classList.remove("activate");
-
     category = "Drinks";
     displayMenu(category)
 }
@@ -78,7 +68,6 @@ function dessertSelect() {
     document.getElementById("food").classList.remove("activate");
     document.getElementById("drinks").classList.remove("activate");
     document.getElementById("dessert").classList.add("activate");
-
     category = "Desserts";
     displayMenu(category)
 }
@@ -93,4 +82,37 @@ function search(){
    for(var i = 0; i <items.length; i++){
         
    }
+}
+
+if (sessionStorage.getItem("username") != undefined) {
+    document.getElementById("commentSection").disabled = false;
+    document.getElementById("submitComment").disabled = false;           
+    document.getElementById("submitComment").classList.add("btn-primary");
+    document.getElementById("submitComment").classList.remove("btn-secondary");
+    function menuModal(item) {
+        document.getElementById("menuTitle").innerHTML = menu_array[item].category;
+        document.getElementById("menuImage").src = "https://ahhhfiq.github.io/images/" + menu_array[item].productImage;
+        document.getElementById("productName").innerHTML = menu_array[item].name;
+        document.getElementById("desc").innerHTML = menu_array[item].desc;
+        document.getElementById("price").innerHTML = menu_array[item].price;
+        document.getElementsByName('comments')[0].placeholder = 'Tell us what you think about our ' + menu_array[item].name;        
+        var menuModal = new Modal(document.getElementById("showMenu"));
+        menuModal.show();
+    }
+}
+else{
+    function menuModal(item) {
+        document.getElementById("menuTitle").innerHTML = menu_array[item].category;
+        document.getElementById("menuImage").src = "https://ahhhfiq.github.io/images/" + menu_array[item].productImage;
+        document.getElementById("productName").innerHTML = menu_array[item].name;
+        document.getElementById("desc").innerHTML = menu_array[item].desc;
+        document.getElementById("price").innerHTML = menu_array[item].price;
+        document.getElementsByName('comments')[0].placeholder = 'You have to be logged in to comment';            
+        var menuModal = new Modal(document.getElementById("showMenu"));
+        menuModal.show();
+    }
+    document.getElementById("commentSection").disabled = true;
+    document.getElementById("submitComment").disabled = true;       
+    document.getElementById("submitComment").classList.remove("btn-primary");
+    document.getElementById("submitComment").classList.add("btn-secondary");
 }

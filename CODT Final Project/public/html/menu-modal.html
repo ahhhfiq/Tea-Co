@@ -1,6 +1,6 @@
 <!-- Modal -->
 <div class="modal fade" id="showMenu" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog modal-md" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="menuTitle">Drinks</h5>
@@ -10,17 +10,25 @@
             </div>
             <div class="modal-body">
                 <div class="row justify-content-center">
-                    <div class="col 7">
+                    <div class="col-6">
                         <img class="img-fluid img-thumbnail" src="../images/teait.jpg" id="menuImage">
                     </div>
-                    <div class="col-8">
+                    <div class="col-6">
                         <table class="table table-hover">
                             <tbody>
                                 <tr>
-                                    <td><strong>Name: <span id="productName">Earl Grey Tea</span></strong></td>
+                                    <td>
+                                        <strong>Name:
+                                            <span id="productName">Earl Grey Tea</span>
+                                        </strong>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Price is $<span id="price">$4.99</span></strong></td>
+                                    <td>
+                                        <strong>Price is $
+                                            <span id="price">$4.99</span>
+                                        </strong>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
@@ -29,12 +37,62 @@
                                         </button>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <p>Rating: </p>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
-                    <div class="w-100"></div>
-                    <div class="col-12" id="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque a minima dolore. Ad aspernatur at omnis atque. Eaque reiciendis quam consectetur corrupti omnis? Modi, blanditiis distinctio delectus aut quas explicabo.</div>
-                    <div class="w-100"></div>
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="w-100"></div>
+                                <div class="col-12" id="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque a minima dolore. Ad aspernatur
+                                    at omnis atque. Eaque reiciendis quam consectetur corrupti omnis? Modi, blanditiis distinctio
+                                    delectus aut quas explicabo.</div>
+                                <div class="w-100"></div>
+                            </td>
+                        </tr>
+                        <div>
+                        </div>
+                        <tr>
+                            <td>
+                                <br>
+                                <div class="w-100"></div>
+                                <p class="commentTitle">
+                                    <span>Comments</span>
+                                </p>
+                                <div class="col-12">
+                                    <textarea name="comments" id="commentSection" cols="60" placeholder="" rows="3"></textarea>
+                                    <button class="btn btn-primary" id="submitComment" style="float:right;margin-top:10px;margin-right:6px;">Submit Comment</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="container">
+                                    <div class="commentBody">
+
+                                        <!-- <div class="col-sm-1">
+                                        </div>
+                                        <div class="col-sm-10">
+                                            <h5>Username</h5>
+                                            <p>
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero assumenda dolor architecto tempora eum earum praesentium repellat
+                                                dicta et voluptatem ea nulla molestiae consectetur officia, saepe eaque.
+                                                Quo, ducimus enim.
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-1"> -->
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
